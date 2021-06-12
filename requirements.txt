@@ -3,3 +3,11 @@ flask-heroku
 flask-wtf
 flask-paginate
 flask-bootstrap
+wtfforms
+requests
+os
+json
+os.path
+time
+pathlib
+datetime
