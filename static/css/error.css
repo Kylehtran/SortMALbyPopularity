@@ -1,0 +1,36 @@
+body{
+    margin: 0px;
+   
+}
+div#error {
+    padding: 10px;
+    text-align: center;
+    top: 50%;
+    left: 50%
+}
+#bar {
+    background-color: #303030;
+    color: #FFFFFF;
+    display: block;
+    height: 60px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#home {
+    background: #303030;
+    color: white;
+    height: 60px;
+    width: 120px;
+    font-size: 15px;
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+    #home:hover {
+        background: #4D4D4D;
+    }

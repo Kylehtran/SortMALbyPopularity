@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/displayList.css') }}" type="text/css" media="screen">
+        <title>Sort MAL by Popularity</title>
+
+    </head>
+
+
+    <body>
+        <div id="bar">
+            <form action="/" method="GET">
+
+                <button class="btn btn-default" type="submit" id="home">
+                    <span aria-hidden="true" class="glyphicon glyphicon-ok"></span>
+                    Home
+                </button>
+            </form>
+            <h1>SORT MAL BY POPULARITY</h1>
+
+            <form action="{{ url_for('list', username = username, selected_status = selected_status) }}" method="post" id="dropdownmenu">
+
+                <div id="dropdown_menu">
+                    <select class="browser-default custom-select" name=anime_status method="POST" onchange="$('#dropdownmenu').submit();">
+
+                        {% for status in anime_status %}
+                        <option value="{{status}}" SELECTED>{{status}}</option>"
+                        {% endfor %}
+                        <option disabled selected>--select--</option>
+                    </select>
+                </div>
+
+
+
+            </form>
+            <form action="{{url_for('list', username = username, selected_status = selected_status)}}" method="post" id="searchPageform">
+                <div id="searchPage">{{ searchPage.search.label }}: {{ searchPage.search(id="pagebox") }}</div>
+                
+
+            </form>
+
+        </div>
+        
+        {{ pagination.links }}
+        <table id="main_table">
+
+            <th>
+            <tr id="table_head">
+                <td width="10px">#</td>
+                <td width="250px">Picture</td>
+                <td width="600px">Title</td>
+                <td width="150px">Global Popularity Ranking</td>
+                <td width="150px">{{username}}'s Score</td>
+                <td width="60px">Status</td>
+            </tr>
+            </th>
+
+            {%for i in range(0, len)%}
+
+            <tr id="table_body">
+
+
+                <td>{{loop.index + pagination.skip}}</td>
+                <td><img src="{{sortedList[i].getPicture()}}" id="anime_img" /></td>
+                <td><a href="https://myanimelist.net/anime/{{sortedList[i].getId()}}" id="mal_link" target="_blank">{{sortedList[i].getName()}}</a></td>
+                <td>{{sortedList[i].getGlobalRanking()}}</td>
+                <td>{{sortedList[i].getScore()}}</td>
+                <td>{{sortedList[i].getStatus()}}</td>
+
+                {%endfor%}
+
+
+
+            </tr>
+
+
+        </table>
+        {{ pagination.links }}
+        {{ pagination.info }}
+
+    </body>
+</html>

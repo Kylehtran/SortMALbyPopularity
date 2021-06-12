@@ -1,0 +1,172 @@
+body {
+    margin: 0px;
+    background-color: #303030;
+}
+h1 {
+    font-size: 35px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: -45px;
+    font-family: 'Copperplate Gothic';
+}
+#bar {
+    background-color: #303030;
+    color: #FFFFFF;
+    display: block;
+    height: 60px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 25px;
+}
+#home {
+    background: #303030;
+    color: white;
+    height: 60px;
+    width: 120px;
+    font-size: 15px;
+    display: block;
+    padding: 0;
+    border: none;
+    background: none;
+}
+    #home:hover {
+        background: #4D4D4D;
+    }
+#dropdown_menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+}
+
+select {
+    background-color: #303030;
+    border: none;
+    color: white;
+    height: 60px;
+    width: 120px;
+    font-size: 15px;
+    
+    display: block;
+    padding: 0;
+}
+
+#table_head {
+    background: #303030;
+    
+}
+    #table_head td {
+        color: white;
+    }
+table {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    left: 50%;
+    
+    font-family: 'Georgia';
+    font-size: 20px;
+    border-collapse: collapse;
+    width: 100%
+}
+
+#anime_img {
+    display: block;
+    max-width: 50%;
+    max-height: 50%;
+    width: auto;
+    height: auto;
+    
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#table_body:nth-child(2n+2) {
+    background-color: #FFFFFF;
+}
+
+#table_body:nth-child(2n+1) {
+    background-color: #E9E9E9;
+}
+
+#table_body td + td {
+    border-left: 1px solid;
+}
+
+td {
+    padding: 8px 8px;
+    color: black;
+    overflow: hidden;
+}
+
+.pagination-page-info {
+    padding: .6em;
+    padding-left: 0;
+    width: 40em;
+    margin: .5em;
+    margin-left: 0;
+    font-size: 16px;
+    color: white;
+}
+
+    .pagination-page-info b {
+        color: white;
+        padding-left: 2px;
+        padding: .1em .25em;
+        font-size: 150%;
+    }
+
+.pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    text-align: center;
+    text-decoration: none;
+}
+
+    .pagination li {
+        margin: 0 1px;
+        text-decoration: none;
+        color: white;
+        float: left;
+        padding: 10px 15px;
+        border-radius: 10px;
+    }
+
+
+
+        .pagination li:hover:not(.active) {
+            background-color: #727272;
+        }
+.pagination a:visited {
+    text-decoration: none;
+    color: white;
+}
+.pagination a:visited:not(:empty){
+    text-decoration: none;
+    color: white;
+}
+
+#mal_link:visited {
+    text-decoration: none;
+    color: blue;
+}
+#searchPage {
+    
+    right: 0;
+    position: absolute;
+}
+#pagebox[type=text] {
+
+    height: 20px;
+    position: relative;
+    left: 0;
+    outline: none;
+    background-color: #797979;
+    border-radius: 10px;
+    width: 70px;
+    text-align: center;
+}
+

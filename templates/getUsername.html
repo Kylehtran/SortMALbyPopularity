@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/getUsername.css') }}" type="text/css" media="screen">
+        <title>Sort MAL by Popularity</title>
+
+    </head>
+
+
+    <body>
+        <div id="bar">
+            <form action="/" method="GET">
+
+                <button class="btn btn-default" type="submit" id="home">
+                    <span aria-hidden="true" class="glyphicon glyphicon-ok"></span>
+                    Home
+                </button>
+            </form>
+        </div>
+        <div id="loading">
+            <img src="{{url_for('static', filename='loading.gif')}}" alt="" /><br>Loading! Probably will take a minute, especially if you have a long list!<br>
+            <p id="gif_credits">GIF is from <a href="https://www.pixiv.net/en/artworks/89896485" target="_blank"> here!</a></p>
+            <img src="{{url_for('static', filename='miyanojump.gif')}}" alt="" />
+            <p id="gif_credits2">GIF is from <a href="https://myanimelist.net/anime/32093/Tanaka-kun_wa_Itsumo_Kedaruge?q=tanaka&cat=anime" target="_blank"> this show!</a></p>
+        </div>
+        <div id="content">
+            <div id="header">
+                <h1 id='title'>Sort your MyAnimeList by popularity</h1>
+            </div>
+
+            <form action="/" method="post" id="usernameform">
+                <div id="enterusername">{{ form.username.label }}: {{ form.username(id='textbox') }}</div>
+                <button class="btn btn-primary btn-block" id ="submit" type="submit" onclick="$('#loading').show(); $('#content').hide()">
+                    Submit
+                </button>
+
+            </form>
+        </div>
+
+    </body>
+</html>

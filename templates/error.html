@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/error.css') }}" type="text/css" media="screen">
+    <title>Error: Wrong Username</title>
+</head>
+<body>
+    <div id="bar">
+        <form action="/" method="GET">
+
+            <button class="btn btn-default" type="submit" id="home">
+                <span aria-hidden="true" class="glyphicon glyphicon-ok"></span>
+                Home
+            </button>
+        </form>
+    </div>
+    <div id="error">
+        <img src="{{url_for('static', filename='miyanopout.gif')}}" id="errorgif">
+        <br>Error: Did you type your username incorrectly?
+        <p id="gif_credits">GIF is from <a href="https://myanimelist.net/anime/32093/Tanaka-kun_wa_Itsumo_Kedaruge?q=tanaka&cat=anime" target="_blank"> this show!</a></p>
+    </div>
+
+</body>
+</html>
