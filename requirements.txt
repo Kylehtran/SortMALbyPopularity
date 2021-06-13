@@ -3,10 +3,4 @@ flask-heroku
 flask-wtf
 flask-paginate
 flask-bootstrap
-requests
-os
-json
-os.path
-time
-pathlib
-datetime
+
