@@ -3,4 +3,3 @@ flask-heroku
 flask-wtf
 flask-paginate
 flask-bootstrap
-
