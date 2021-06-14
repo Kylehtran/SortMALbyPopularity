@@ -109,7 +109,7 @@ def sortListbyPopularity(username):
                         sortedList.append(x)
 
                 i+=1
-            if count == userAnimeList_ID.length():
+            if count == len(userAnimeList_ID):
                 break;
             if ("next" in resp["paging"]):
                 resp = requests.get(resp["paging"]["next"].format(username), headers=my_headers).json()
