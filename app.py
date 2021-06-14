@@ -76,9 +76,7 @@ def list(username, selected_status):
 def error():
     return render_template('error.html')
 
-if __name__ == '__main__':
 
-    app.run()
 
 
 
