@@ -96,7 +96,7 @@ def sortListbyPopularity(username):
         resp = getPopularityRanking_api(my_headers) 
 
         next = True
-
+        count = 0
         while(next):
             i = 0
             
@@ -104,11 +104,13 @@ def sortListbyPopularity(username):
                 tempAnimeID = resp["data"][i]["node"]["id"]
                 for x in userAnimeList_ID:
                     if tempAnimeID == x.getId():
+                        count+=1
                         x.setGlobalRanking(resp["data"][i]["ranking"]["rank"])
                         sortedList.append(x)
 
                 i+=1
-
+            if count == userAnimeList_ID.length():
+                break;
             if ("next" in resp["paging"]):
                 resp = requests.get(resp["paging"]["next"].format(username), headers=my_headers).json()
                 next = True
