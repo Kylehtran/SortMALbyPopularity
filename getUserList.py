@@ -1,8 +1,10 @@
+from flask import url_for
 import requests
 import json
 import os.path, time
 import pathlib
 import datetime
+
 
 from AnimeEntry import AnimeEntry
 from refreshtoken import refresh_token
@@ -71,7 +73,12 @@ def appendInList(username, my_headers):
                 status = "Dropped"
             else:
                 status = "On Hold"
-            userAnimeList_ID.append(AnimeEntry(resp["data"][i]["node"]["title"], resp["data"][i]["node"]["id"], "", resp["data"][i]["node"]["main_picture"]["medium"], status, resp["data"][i]["list_status"]["score"]))
+
+            try:
+                picture = resp["data"][i]["node"]["main_picture"]["medium"]
+            except:
+                picture = url_for('static', filename = 'wot.png')
+            userAnimeList_ID.append(AnimeEntry(resp["data"][i]["node"]["title"], resp["data"][i]["node"]["id"], "", picture, status, resp["data"][i]["list_status"]["score"]))
             i+=1
 
            
