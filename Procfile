@@ -1,1 +1,1 @@
-web: gunicorn sort-mal-by-popularity.wsgi
+web: gunicorn SortMALbyPopularity.wsgi
